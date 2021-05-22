@@ -1,5 +1,5 @@
 import * as three from "three";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { Text } from "troika-three-text";
 
@@ -8,7 +8,7 @@ extend({ Text });
 const textCommonProps = {
   font: "Roboto",
   fontSize: 30,
-  color: "#ddd",
+  color: "#0F0",
   maxWidth: 300,
   lineHeight: 1,
   letterSpacing: 0,
@@ -45,26 +45,26 @@ function Phrase({ content, position = [0, 0, 0], rotation = [0, 0, 0] }) {
   );
 }
 
-function Scene() {
+function Texts() {
   const [rotation, setRotation] = useState([0, 0, 0]);
 
-  useFrame(() => setRotation(([x, y, z]) => [x, y - 0.01, z]));
+  useFrame(() => setRotation(([x, y, z]) => [x, y - 0.02, z]));
 
   return (
     <group rotation={rotation} position={[0, -40, -300]}>
-      <Phrase content="Bonjour" position={[0, 0, 150]} rotation={[0, 0, 0]} />
+      <Phrase content="WIP" position={[0, 0, 150]} rotation={[0, 0, 0]} />
       <Phrase
-        content="Bienvenue"
+        content="Not yet"
         position={[150, 0, 0]}
         rotation={[0, Math.PI / 2, 0]}
       />
       <Phrase
-        content="Hello"
+        content="Brb later"
         position={[0, 0, -150]}
         rotation={[0, -Math.PI, 0]}
       />
       <Phrase
-        content="Welcome"
+        content="On it"
         position={[-150, 0, 0]}
         rotation={[0, Math.PI / -2, 0]}
       />
@@ -74,21 +74,27 @@ function Scene() {
 
 export default function CanvasComponent() {
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: -1,
-      }}
-    >
-      <Canvas>
-        {/* <ambientLight /> */}
-        <Scene />
-        {/* <pointLight position={[10, 10, 10]} /> */}
-      </Canvas>
-    </div>
+    <Canvas>
+      <ambientLight />
+      <Texts />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <mesh>
+        <sphereGeometry args={[1, 32, 32]} />
+        <meshStandardMaterial color="green" />
+      </mesh>
+      <mesh position={[0.4, 0.2, 0.9]}>
+        <sphereGeometry args={[0.2, 32, 32]} />
+        <meshStandardMaterial color="black" />
+      </mesh>
+      <mesh position={[-0.4, 0.2, 0.9]}>
+        <sphereGeometry args={[0.2, 32, 32]} />
+        <meshStandardMaterial color="black" />
+      </mesh>
+      <mesh position={[0, -0.2, 1]}>
+        <boxGeometry args={[1, 0.2]} />
+        <meshStandardMaterial color="black" />
+      </mesh>
+      <pointLight position={[10, 10, 10]} />
+    </Canvas>
   );
 }
