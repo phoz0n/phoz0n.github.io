@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="flex h-screen v-screen justify-center items-center bg-gray-100 dark:bg-gray-900 p-2">
+    <div className="flex min-h-screen v-screen justify-center items-center bg-gray-100 dark:bg-gray-900 p-2">
       <Head>
         <title>Léandre Daumont</title>
         <meta name="description" content="Léandre Daumont" />
