@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/drei": "^6.1.1",
     "@react-three/fiber": "^6.2.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-svgo": "^9.0.0",
