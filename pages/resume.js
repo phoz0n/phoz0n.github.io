@@ -1,8 +1,9 @@
 import Head from 'next/head'
 
-import HeadBrb from '../components/head-brb'
-import HomeScene from '../components/HomeScene'
+import Board from '../components/Board'
 
+// import HeadBrb from '../components/head-brb'
+// import HomeScene from '../components/HomeScene'
 export default function Home() {
   return (
     <div style={{ height: '100vh', width: '100vw' }}>
@@ -12,7 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomeScene />
+      <Board />
+      {/* <HomeScene /> */}
       {/* <HeadBrb /> */}
     </div>
   )
