@@ -1,23 +1,32 @@
 function Section({ children, title }) {
   return (
-    <section className="p-4 bg-gray-100 flex flex-row border-t-2 border-red-500">
+    <section className="p-8 bg-gray-100 flex flex-row border-t">
       <h1 className="w-2/12">{title}</h1>
       <div className="w-10/12">{children}</div>
     </section>
   )
 }
 
-function Experience({ title, date, subtitle, jobtitle, desc, last = false }) {
+function Experience({ title, date, subtitle, jobtitle, children, last = false }) {
   return (
-    <article className={`${last ? '' : 'pb-4 border-b  mb-4'}`}>
+    <article className={`${last ? '' : 'pb-8 border-b mb-8'}`}>
       <div className="flex flex-row justify-between">
         <h2>{title}</h2>
         <p>{date}</p>
       </div>
-      <h3>{subtitle}</h3>
+      <h3 className="text-xs">{subtitle}</h3>
       <h4 className="font-medium">{jobtitle}</h4>
-      <p className="text-sm">{desc}</p>
+      <p className="text-sm">{children}</p>
     </article>
+  )
+}
+
+function SmallItem({ title, desc }) {
+  return (
+    <div className="mb-8">
+      <div>{title}</div>
+      {desc && <div className="text-sm text-gray-800">{desc}</div>}
+    </div>
   )
 }
 
@@ -36,53 +45,69 @@ export default function CV(props) {
         transformOrigin: 'top left',
         width: '210mm',
       }}>
-      <div>
-        <h1>Léandre Daumont</h1>
+      <div className="flex justify-between p-8">
+        <div>
+          <h1>Léandre Daumont</h1>
+          <h2>Software Engineer</h2>
+        </div>
+        <div>mail coming soon</div>
       </div>
       <Section title="Experience">
         <Experience
           title="Yubo - Paris"
           date="Oct. 2019 - Present"
           subtitle="The generation Z social network"
-          jobtitle="Safety - Lead Software Engineer"
-          desc="Created great satefy tools for our safety specialists working all around the world."
-        />
+          jobtitle="Safety - Lead Software Engineer">
+          Engineered satefy tools for our safety specialists working all around the world to keep
+          the Yubo safe.
+        </Experience>
         <Experience
           title="Allianz - Paris"
           date="2016 - 2019"
           subtitle="Multinational financial services"
           jobtitle="Software Developer"
-          desc="Created tools to track contracts anomalies and automate part of communications with allowed service providers."
-          last
-        />
+          last>
+          Created tools to track contracts anomalies and automate parts of communications with
+          allowed service providers.
+        </Experience>
       </Section>
       <Section title="Education">
         <Experience
-          title="Master's Degrees"
+          title="Ingésup/YNOV - Paris"
           subtitle="Web developement, mobile &amp; IoT"
-          date="2017 - 2019"
-        />
+          jobtitle="Master's Degrees"
+          date="2017 - 2019">
+          Used Angular, React, Ionic, Xamarin.
+        </Experience>
+        <Experience
+          title="CNAM - Paris"
+          subtitle="Analysis and Design of Decision-Making Information Systems"
+          jobtitle="License"
+          date="2016 - 2017"
+          last>
+          ROLAP, MOLAP, RDBMS, SQL, Java, Unit testing.
+        </Experience>
       </Section>
-      <section className="p-4">
-        <h1>Skills</h1>
-        <ol>
-          <li>ReactJs</li>
-          <li>NodeJs</li>
-          <li>Redux</li>
-          <li>Kubernetes</li>
-        </ol>
-      </section>
-      <section className="p-4">
-        <h1>Hobbies</h1>
-        <ol>
-          <li>Game dev</li>
-          <li>Software</li>
-          <li>3D modeling</li>
-        </ol>
-      </section>
-      <section className="p-4">
-        <h1>let me some time to fill it pls</h1>
-      </section>
+      <Section title="Skills">
+        <div className="grid grid-cols-3">
+          <SmallItem title="Front" desc={'React, Redux, React-native'} />
+          <SmallItem title="Back" desc={'Node.js, PHP'} />
+          <SmallItem title="DevOps" desc={'Kubernetes, Docker, GCP, Azure'} />
+        </div>
+      </Section>
+      <Section title="Languages">
+        <div className="grid grid-cols-2">
+          <SmallItem title="French" desc="Native" />
+          <SmallItem title="English" desc="Professional" />
+        </div>
+      </Section>
+      <Section title="Hobbies">
+        <div className="grid grid-cols-3">
+          <SmallItem title="Mobile app dev" desc="For encouraging ideas" />
+          <SmallItem title="Game dev" desc="Prototyping is fun" />
+          <SmallItem title="3D modeling" desc="Not an artist... yet" />
+        </div>
+      </Section>
     </div>
   )
 }
