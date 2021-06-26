@@ -1,6 +1,6 @@
 function Section({ children, title }) {
   return (
-    <section className="p-8 bg-gray-100 flex flex-row border-t">
+    <section className="px-8 py-4 bg-gray-100 flex flex-row border-t">
       <h1 className="w-2/12">{title}</h1>
       <div className="w-10/12">{children}</div>
     </section>
@@ -9,7 +9,7 @@ function Section({ children, title }) {
 
 function Experience({ title, date, subtitle, jobtitle, children, last = false }) {
   return (
-    <article className={`${last ? '' : 'pb-8 border-b mb-8'}`}>
+    <article className={`${last ? '' : 'pb-4 border-b mb-4'}`}>
       <div className="flex flex-row justify-between">
         <h2>{title}</h2>
         <p>{date}</p>
@@ -21,11 +21,11 @@ function Experience({ title, date, subtitle, jobtitle, children, last = false })
   )
 }
 
-function SmallItem({ title, desc }) {
+function SmallItem({ title, children }) {
   return (
-    <div className="mb-8">
+    <div>
       <div>{title}</div>
-      {desc && <div className="text-sm text-gray-800">{desc}</div>}
+      {children && <div className="text-sm text-gray-800">{children}</div>}
     </div>
   )
 }
@@ -44,8 +44,9 @@ export default function CV(props) {
         // transform: 'scale(1.0)',
         transformOrigin: 'top left',
         width: '210mm',
+        overflow: 'hidden',
       }}>
-      <div className="flex justify-between p-8">
+      <div className="flex flex-1 justify-between p-4">
         <div>
           <h1>Léandre Daumont</h1>
           <h2>Software Engineer</h2>
@@ -60,6 +61,14 @@ export default function CV(props) {
           jobtitle="Safety - Lead Software Engineer">
           Engineered satefy tools for our safety specialists working all around the world to keep
           the Yubo safe.
+        </Experience>
+        <Experience
+          title="Sharedress - Paris"
+          date="2016 - Present"
+          subtitle="B2B app"
+          jobtitle="CTO">
+          Created a B2B tablet app using <b>Firebase</b> and <b>React-native</b> to learn consumers
+          favorite products and suggest them the best personalized choice for them.
         </Experience>
         <Experience
           title="Allianz - Paris"
@@ -89,10 +98,30 @@ export default function CV(props) {
         </Experience>
       </Section>
       <Section title="Skills">
-        <div className="grid grid-cols-3">
-          <SmallItem title="Front" desc={'React, Redux, React-native'} />
-          <SmallItem title="Back" desc={'Node.js, PHP'} />
-          <SmallItem title="DevOps" desc={'Kubernetes, Docker, GCP, Azure'} />
+        <div className="grid grid-cols-3 gap-y-4">
+          <SmallItem title="Front">
+            React
+            <br />
+            Redux
+            <br />
+            React-native
+            <br />
+            Svelte <i>(learning)</i>
+          </SmallItem>
+          <SmallItem title="Back">
+            Node.js
+            <br />
+            PHP
+          </SmallItem>
+          <SmallItem title="DevOps">
+            Kubernetes
+            <br />
+            Docker
+            <br />
+            GCP
+            <br />
+            Azure
+          </SmallItem>
         </div>
       </Section>
       <Section title="Languages">
