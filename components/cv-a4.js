@@ -16,7 +16,7 @@ function Experience({ title, date, subtitle, jobtitle, children, last = false })
       </div>
       <h3 className="text-xs">{subtitle}</h3>
       <h4 className="font-medium">{jobtitle}</h4>
-      <p className="text-sm">{children}</p>
+      <p className="text-sm text-gray-800">{children}</p>
     </article>
   )
 }
@@ -53,49 +53,60 @@ export default function CV(props) {
         </div>
         <div>mail coming soon</div>
       </div>
+      <Section title="Profile">
+        <p>
+          Specialized in <b>Fullstack JS</b> with 4 years of experience using React.
+        </p>
+      </Section>
       <Section title="Experience">
         <Experience
           title="Yubo - Paris"
           date="Oct. 2019 - Present"
           subtitle="The generation Z social network"
-          jobtitle="Safety - Lead Software Engineer">
-          Engineered satefy tools for our safety specialists working all around the world to keep
-          the Yubo safe.
+          jobtitle="Lead Software Engineer - Safety">
+          Front-end using <b>React</b> and <b>Redux</b> with <b>SCSS</b>
+          <br />
+          Backend using <b>Express</b>, <b>Typescript</b> and <b>SocketCluster</b>
+          <br />
+          Data engineering using <b>Postgres</b>, <b>MongoDB</b>, <b>ElasticSearch</b>,{' '}
+          <b>BigQuery</b> and <b>Redis</b>.<br />
+          Devops using <b>Kubernetes</b> for <b>GCP</b> and <b>AWS S3</b>
+          Designed views using <b>Figma</b>
         </Experience>
         <Experience
           title="Sharedress - Paris"
           date="2016 - Present"
           subtitle="B2B app"
           jobtitle="CTO">
-          Created a B2B tablet app using <b>Firebase</b> and <b>React-native</b> to learn consumers
-          favorite products and suggest them the best personalized choice for them.
+          Created a B2B tablet app using <b>Cloud functions</b> in <b>Firebase</b>,{' '}
+          <b>React-native</b>and <b>Redux</b> to suggest the business customers the best
+          personalized products and services for them.
         </Experience>
         <Experience
           title="Allianz - Paris"
           date="2016 - 2019"
           subtitle="Multinational financial services"
-          jobtitle="Software Developer"
+          jobtitle="Software Developer - Social protection department"
           last>
           Created tools to track contracts anomalies and automate parts of communications with
-          allowed service providers.
+          allowed service providers. Used <b>SAS</b>, <b>SQL</b> and <b>VBA</b> for Excel and Access
         </Experience>
       </Section>
       <Section title="Education">
         <Experience
           title="Ingésup/YNOV - Paris"
           subtitle="Web developement, mobile &amp; IoT"
-          jobtitle="Master's Degrees"
+          jobtitle="Master's Degree"
           date="2017 - 2019">
-          Used Angular, React, Ionic, Xamarin.
+          Deployed projects on <b>Azure</b>.
         </Experience>
         <Experience
           title="CNAM - Paris"
           subtitle="Analysis and Design of Decision-Making Information Systems"
           jobtitle="License"
           date="2016 - 2017"
-          last>
-          ROLAP, MOLAP, RDBMS, SQL, Java, Unit testing.
-        </Experience>
+          last
+        />
       </Section>
       <Section title="Skills">
         <div className="grid grid-cols-3 gap-y-4">
@@ -105,13 +116,14 @@ export default function CV(props) {
             Redux
             <br />
             React-native
-            <br />
-            Svelte <i>(learning)</i>
           </SmallItem>
           <SmallItem title="Back">
             Node.js
             <br />
-            PHP
+            PHP{' '}
+            <span className="text-xs">
+              (several commercial websites as a freelance during studies)
+            </span>
           </SmallItem>
           <SmallItem title="DevOps">
             Kubernetes
@@ -125,16 +137,17 @@ export default function CV(props) {
         </div>
       </Section>
       <Section title="Languages">
-        <div className="grid grid-cols-2">
-          <SmallItem title="French" desc="Native" />
-          <SmallItem title="English" desc="Professional" />
+        <div className="grid grid-cols-3">
+          <SmallItem title="French">Native</SmallItem>
+          <SmallItem title="English">Professional use</SmallItem>
+          <SmallItem title="German">Used when I don't want to help tourists</SmallItem>
         </div>
       </Section>
       <Section title="Hobbies">
         <div className="grid grid-cols-3">
-          <SmallItem title="Mobile app dev" desc="For encouraging ideas" />
-          <SmallItem title="Game dev" desc="Prototyping is fun" />
-          <SmallItem title="3D modeling" desc="Not an artist... yet" />
+          <SmallItem title="Mobile app dev">For encouraging ideas</SmallItem>
+          <SmallItem title="Game dev">Prototyping is fun</SmallItem>
+          <SmallItem title="3D modeling">Not an artist... yet</SmallItem>
         </div>
       </Section>
     </div>

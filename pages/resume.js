@@ -8,7 +8,7 @@ import CV from '../components/cv-a4'
 
 export default function Home() {
   return (
-    <div style={{ height: '100vh', width: '100vw', backgroundColor: '#0c0c0c' }}>
+    <div style={{ minHeight: '100vh', width: '100vw', backgroundColor: '#0c0c0c' }}>
       <Head>
         <title>Léandre Daumont - Resume</title>
         <meta name="description" content="Léandre Daumont" />
