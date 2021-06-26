@@ -1,8 +1,8 @@
 function Section({ children, title }) {
   return (
     <section className="px-8 py-4 bg-gray-100 flex flex-row border-t">
-      <h1 className="w-2/12">{title}</h1>
-      <div className="w-10/12">{children}</div>
+      <h1 className="w-32">{title}</h1>
+      <div className="w-full">{children}</div>
     </section>
   )
 }
@@ -46,7 +46,7 @@ export default function CV(props) {
         width: '210mm',
         overflow: 'hidden',
       }}>
-      <div className="flex flex-1 justify-between p-4">
+      <div className="flex flex-1 justify-between px-8 py-4">
         <div>
           <h1>Léandre Daumont</h1>
           <h2>Software Engineer</h2>
@@ -61,17 +61,15 @@ export default function CV(props) {
       <Section title="Experience">
         <Experience
           title="Yubo - Paris"
-          date="Oct. 2019 - Present"
+          date="2019 - Present"
           subtitle="The generation Z social network"
           jobtitle="Lead Software Engineer - Safety">
-          Front-end using <b>React</b> and <b>Redux</b> with <b>SCSS</b>
-          <br />
-          Backend using <b>Express</b>, <b>Typescript</b> and <b>SocketCluster</b>
-          <br />
-          Data engineering using <b>Postgres</b>, <b>MongoDB</b>, <b>ElasticSearch</b>,{' '}
-          <b>BigQuery</b> and <b>Redis</b>.<br />
-          Devops using <b>Kubernetes</b> for <b>GCP</b> and <b>AWS S3</b>
-          Designed views using <b>Figma</b>
+          Created moderation tools using <b>React</b> with <b>SCSS</b> and <b>Redux</b> for our
+          specialists worldwide to keep our platform safe for the users. Backend using{' '}
+          <b>Express</b>, <b>Typescript</b> and <b>SocketCluster</b>. Data engineering using{' '}
+          <b>Postgres</b>, <b>MongoDB</b>, <b>ElasticSearch</b>, <b>BigQuery</b>, <b>Redis</b> and{' '}
+          <b>AWS S3</b>. Deployed on <b>GCP</b> using <b>Kubernetes</b>. Designed views using{' '}
+          <b>Figma</b>.
         </Experience>
         <Experience
           title="Sharedress - Paris"
@@ -79,7 +77,7 @@ export default function CV(props) {
           subtitle="B2B app"
           jobtitle="CTO">
           Created a B2B tablet app using <b>Cloud functions</b> in <b>Firebase</b>,{' '}
-          <b>React-native</b>and <b>Redux</b> to suggest the business customers the best
+          <b>React-native</b> and <b>Redux</b> to suggest the business customers the best
           personalized products and services for them.
         </Experience>
         <Experience
@@ -89,7 +87,8 @@ export default function CV(props) {
           jobtitle="Software Developer - Social protection department"
           last>
           Created tools to track contracts anomalies and automate parts of communications with
-          allowed service providers. Used <b>SAS</b>, <b>SQL</b> and <b>VBA</b> for Excel and Access
+          allowed service providers. Used <b>SAS</b>, <b>SQL</b> and <b>VBA</b> for Excel and
+          Access.
         </Experience>
       </Section>
       <Section title="Education">
@@ -120,10 +119,7 @@ export default function CV(props) {
           <SmallItem title="Back">
             Node.js
             <br />
-            PHP{' '}
-            <span className="text-xs">
-              (several commercial websites as a freelance during studies)
-            </span>
+            PHP <span className="text-xs">(made several commercial websites during studies)</span>
           </SmallItem>
           <SmallItem title="DevOps">
             Kubernetes
@@ -137,10 +133,9 @@ export default function CV(props) {
         </div>
       </Section>
       <Section title="Languages">
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-2">
           <SmallItem title="French">Native</SmallItem>
           <SmallItem title="English">Professional use</SmallItem>
-          <SmallItem title="German">Used when I don't want to help tourists</SmallItem>
         </div>
       </Section>
       <Section title="Hobbies">
