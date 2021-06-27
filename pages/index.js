@@ -9,14 +9,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white rounded-xl overflow-hidden dark:bg-black shadow-md flex rounded-1 flex-col md:flex-row w-full md:w-auto">
+      <main className="bg-white rounded-xl overflow-hidden dark:bg-black shadow-md flex rounded-1 flex-col sm:flex-row w-full sm:w-auto">
         <img
           src={require('../public/1516850784027.jpeg')}
-          className="rounded-full p-4 w-48 mx-auto md:rounded-none md:p-0 md:object-cover"
+          className="rounded-full p-4 w-48 mx-auto sm:rounded-none sm:p-0 sm:object-cover"
         />
 
-        <div className="text-black dark:text-gray-400 md:flex md:flex-col md:justify-between">
-          <div className="p-4 border-t dark:border-gray-800 md:border-t-0">
+        <div className="text-black dark:text-gray-400 sm:flex sm:flex-col sm:justify-between">
+          <div className="p-4 border-t dark:border-gray-800 sm:border-t-0">
             <h1 className="text-3xl">Léandre Daumont</h1>
             <h2 className="text-2xl">Software Engineer</h2>
           </div>
