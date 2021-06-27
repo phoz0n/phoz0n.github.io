@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head'
 
 export default function Home() {
   return (
@@ -9,9 +9,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white rounded-xl overflow-hidden dark:bg-black shadow-md flex rounded-1 flex-col md:flex-row">
+      <main className="bg-white rounded-xl overflow-hidden dark:bg-black shadow-md flex rounded-1 flex-col md:flex-row w-full md:w-auto">
         <img
-          src={require("../public/1516850784027.jpeg")}
+          src={require('../public/1516850784027.jpeg')}
           className="rounded-full p-4 w-48 mx-auto md:rounded-none md:p-0 md:object-cover"
         />
 
@@ -23,7 +23,7 @@ export default function Home() {
 
           <div className="p-4">
             <p>
-              Currently Lead Full-stack at{" "}
+              Currently Lead Full-stack at{' '}
               <a className="text-cyan-600" href="https://yubo.live">
                 Yubo
               </a>
@@ -37,15 +37,12 @@ export default function Home() {
             <a href="https://github.com/digiz3d" className="px-2">
               Github
             </a>
-            <a
-              href="https://www.linkedin.com/in/l%C3%A9andre-daumont/"
-              className="px-2 pr-0"
-            >
+            <a href="https://www.linkedin.com/in/l%C3%A9andre-daumont/" className="px-2 pr-0">
               LinkedIn
             </a>
           </div>
         </div>
       </main>
     </div>
-  );
+  )
 }
