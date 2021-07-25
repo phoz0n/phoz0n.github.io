@@ -11,7 +11,7 @@ export default function Home() {
 
       <main className="bg-white rounded-xl overflow-hidden dark:bg-black shadow-md flex rounded-1 flex-col sm:flex-row w-full sm:w-auto">
         <img
-          src={require('../public/1516850784027.jpeg')}
+          src={require('../public/1626966592655-square.jpeg')}
           className="rounded-full p-4 w-48 mx-auto sm:rounded-none sm:p-0 sm:object-cover"
         />
 
