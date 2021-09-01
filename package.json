@@ -9,23 +9,23 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-three/drei": "^7.2.2",
+    "@react-three/drei": "^7.6.0",
     "@react-three/fiber": "^7.0.6",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-svgo": "^9.0.0",
-    "next": "^11.0.1",
+    "next": "^11.1.2",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "^1.36.0",
-    "three": "^0.130.1",
+    "sass": "^1.38.2",
+    "three": "^0.132.2",
     "troika-three-text": "^0.42.0",
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.3",
     "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "^2.2.9"
   }
 }
