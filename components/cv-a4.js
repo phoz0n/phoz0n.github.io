@@ -63,7 +63,7 @@ export default function CV(props) {
           title="Yubo - Paris"
           date="2019 - Present"
           subtitle="The generation Z social network"
-          jobtitle="Lead Software Engineer - Safety">
+          jobtitle="Software Engineer - Safety">
           Created moderation tools using <b>React</b> with <b>SCSS</b> and <b>Redux</b> for our
           specialists worldwide to keep our platform safe for the users. Backend using{' '}
           <b>Express</b>, <b>Typescript</b> and <b>SocketCluster</b>. Data engineering using{' '}

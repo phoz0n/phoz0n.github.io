@@ -23,7 +23,7 @@ export default function Home() {
 
           <div className="p-4">
             <p>
-              Currently Lead Full-stack at{' '}
+              Currently Fullstack Engineer at{' '}
               <a className="text-cyan-600" href="https://yubo.live">
                 Yubo
               </a>
