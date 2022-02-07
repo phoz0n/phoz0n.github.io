@@ -33,35 +33,29 @@ function SmallItem({ title, children }) {
 export default function CV(props) {
   return (
     <div
+      className="overflow-hidden flex flex-1 flex-col bg-white box-border mx-auto"
       style={{
-        backgroundColor: 'white',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flex: 1,
-        flexDirection: 'column',
         height: '297mm',
-        margin: '0 auto',
-        // transform: 'scale(1.0)',
-        transformOrigin: 'top left',
         width: '210mm',
-        overflow: 'hidden',
       }}>
       <div className="flex flex-1 justify-between px-8 py-4">
         <div>
           <h1>Léandre Daumont</h1>
           <h2>Software Engineer</h2>
         </div>
-        <div>mail coming soon</div>
+        <div>
+          <a href="https://www.linkedin.com/in/l%C3%A9andre-daumont/">Contact me</a>
+        </div>
       </div>
       <Section title="Profile">
         <p>
-          Specialized in <b>Fullstack JS</b> with 4 years of experience using React.
+          Specialized in <b>Fullstack JS/TS</b> with 5 years of experience using <b>React</b>.
         </p>
       </Section>
       <Section title="Experience">
         <Experience
           title="Yubo - Paris"
-          date="2019 - Present"
+          date="2019 - 2022"
           subtitle="The generation Z social network"
           jobtitle="Software Engineer - Safety">
           Created moderation tools using <b>React</b> with <b>SCSS</b> and <b>Redux</b> for our
@@ -71,14 +65,9 @@ export default function CV(props) {
           <b>AWS S3</b>. Deployed on <b>GCP</b> using <b>Kubernetes</b>. Designed views using{' '}
           <b>Figma</b>.
         </Experience>
-        <Experience
-          title="Sharedress - Paris"
-          date="2016 - Present"
-          subtitle="B2B app"
-          jobtitle="CTO">
-          Created a B2B tablet app using <b>Cloud functions</b> in <b>Firebase</b>,{' '}
-          <b>React-native</b> and <b>Redux</b> to suggest the business customers the best
-          personalized products and services for them.
+        <Experience title="Sharedress - Paris" date="2018 - 2020" subtitle="B2B app" jobtitle="CTO">
+          Created a B2B app using <b>Cloud functions</b> for <b>Firebase</b>, <b>React Native</b>{' '}
+          and <b>Redux</b> to suggest the best personalized products to the business' customers.
         </Experience>
         <Experience
           title="Allianz - Paris"
@@ -96,9 +85,8 @@ export default function CV(props) {
           title="Ingésup/YNOV - Paris"
           subtitle="Web developement, mobile &amp; IoT"
           jobtitle="Master's Degree"
-          date="2017 - 2019">
-          Deployed projects on <b>Azure</b>.
-        </Experience>
+          date="2017 - 2019"
+        />
         <Experience
           title="CNAM - Paris"
           subtitle="Analysis and Design of Decision-Making Information Systems"
@@ -118,6 +106,8 @@ export default function CV(props) {
           </SmallItem>
           <SmallItem title="Back">
             Node.js
+            <br />
+            GraphQL
             <br />
             PHP <span className="text-xs">(made several commercial websites during studies)</span>
           </SmallItem>
@@ -140,9 +130,9 @@ export default function CV(props) {
       </Section>
       <Section title="Hobbies">
         <div className="grid grid-cols-3">
-          <SmallItem title="Mobile app dev">For encouraging ideas</SmallItem>
-          <SmallItem title="Game dev">Prototyping is fun</SmallItem>
-          <SmallItem title="3D modeling">Not an artist... yet</SmallItem>
+          <SmallItem title="Mobile app dev" />
+          <SmallItem title="Game dev" />
+          <SmallItem title="3D modeling" />
         </div>
       </Section>
     </div>
