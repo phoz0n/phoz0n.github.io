@@ -6,11 +6,25 @@ import Card from './card'
 export default function WalletScene() {
   return (
     <Canvas camera={{ position: [0, 0, 1], fov: 40, near: 0.0001, far: 10 }}>
-      <ambientLight intensity={1} />
       <Suspense fallback={null}>
-        <Card />
+        <ambientLight intensity={1} />
+        <Card
+          rotation={[Math.PI / 2, 0, 0]}
+          position={[0, 0, 0]}
+          onPointerEnter={() => console.log('ok 1')}
+        />
+        <Card
+          rotation={[Math.PI / 2, 0, 0]}
+          position={[0, -0.02, 0.005]}
+          onPointerEnter={() => console.log('ok 2')}
+        />
+        <Card
+          rotation={[Math.PI / 2, 0, 0]}
+          position={[0, -0.04, 0.01]}
+          onPointerEnter={() => console.log('ok 3')}
+        />
+        <OrbitControls />
       </Suspense>
-      <OrbitControls />
     </Canvas>
   )
 }
