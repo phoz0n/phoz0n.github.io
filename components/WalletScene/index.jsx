@@ -1,12 +1,13 @@
-import { motion, MotionCanvas, LayoutCamera } from 'framer-motion-3d'
+import { motion } from 'framer-motion-3d'
 import { Suspense } from 'react'
-import Card from './Card'
-import CardHolderSlider from './CardHolderSlider'
-
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 
+import Card from './Card'
+import CardHolderSlider from './CardHolderSlider'
+
 export default function WalletScene() {
+  console.log('ok')
   return (
     <Canvas camera={{ position: [0, 0, 0.5], fov: 40, near: 0.0001, far: 10 }}>
       <Suspense fallback={null}>
