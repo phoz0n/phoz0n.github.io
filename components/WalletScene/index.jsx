@@ -1,21 +1,21 @@
-import { OrbitControls } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
+import { motion, MotionCanvas, LayoutCamera } from 'framer-motion-3d'
 import { Suspense } from 'react'
 import Card from './Card'
-import Camera from './camera'
 import CardHolderSlider from './CardHolderSlider'
 
 import * as THREE from 'three'
+import { Canvas } from '@react-three/fiber'
 
 export default function WalletScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 1], fov: 40, near: 0.0001, far: 10 }}>
+    <Canvas camera={{ position: [0, 0, 0.5], fov: 40, near: 0.0001, far: 10 }}>
       <Suspense fallback={null}>
-        <Camera />
-        <primitive object={new THREE.AxesHelper(10)} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[2, 2, 2]} />
-        <pointLight position={[2, 2, -2]} />
+        {process.env.NODE_ENV === 'development' && (
+          <motion.primitive object={new THREE.AxesHelper(10)} />
+        )}
+        <motion.ambientLight intensity={0.5} />
+        <motion.pointLight position={[2, 2, 2]} intensity={2} />
+        <motion.pointLight position={[2, 2, -2]} intensity={2} />
         <Card
           rotation={[Math.PI / 2, 0, 0]}
           position={[0, 0, 0]}
@@ -23,9 +23,16 @@ export default function WalletScene() {
             e.stopPropagation()
             console.log('ok 1')
           }}
+          transition={{ duration: 0.5 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1, rotateZ: -Math.PI * 2 + 0.5 }}
         />
-        <CardHolderSlider rotation={[Math.PI / 2, 0, 0]} />
-        <OrbitControls />
+        <CardHolderSlider
+          rotation={[Math.PI / 2, 0, 0]}
+          transition={{ duration: 0.5 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1, rotateZ: -Math.PI * 2 + 0.5 }}
+        />
       </Suspense>
     </Canvas>
   )
