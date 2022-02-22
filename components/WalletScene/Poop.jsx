@@ -17,7 +17,7 @@ export default function Poop(props) {
         castShadow
         receiveShadow
         geometry={nodes.Poop.geometry}
-        material={materials.Pooop}>
+        material={materials.Material}>
       </motion.mesh>
     </motion.group>
   )
